@@ -13,4 +13,4 @@
 *.h linguist-language=c++
 
 # ignore batch files in language contribution statistics
-*.{bat,[bB][aA][tT]} linguist-vendored
+*.bat linguist-vendored
