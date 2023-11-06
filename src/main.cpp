@@ -3,10 +3,7 @@
 #include <iostream>
 #include <chrono>
 #include <fstream>
-
-#ifdef ENABLE_FILESYSTEM
 #include <filesystem>
-#endif
 
 // -------------------------------------------------------------------------
 // ENTRY
@@ -23,9 +20,7 @@ int main( int argc, const char *argv[] )
 	{
 		std::chrono::high_resolution_clock::duration::rep start = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 
-		#ifdef ENABLE_FILESYSTEM
 		std::filesystem::create_directories( std::filesystem::path( filename ).remove_filename() );
-		#endif
 
 		std::ofstream file( filename );
 		if ( !file.is_open() )

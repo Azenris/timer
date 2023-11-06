@@ -1,5 +1,6 @@
 # Whats it for
 Just used on other projects to time the building on them.
+I use it for `personal` projects.
 
 # How To Use
 Call the exe once with start "timer.exe start".
@@ -12,8 +13,13 @@ You can add another argument to change the file used to store the temporary data
 By default it is "TEMP/build_time_data.bin". Relative to the current directory.
 Example.
 	timer.exe s "Somewhere/else/f.bin"
-NOTE: it will not create folder that don't exists UNLESS you build with ENABLE_FILESYSTEM.
 
-# Building::Filesystem
-To allow the program to create directories for you add -DENABLE_FILESYSTEM at the end of the defines in the build.bat
-This will result in a larger exe. (on my PC 28_KB to 41_KB)
+# How to build the build system using Cmake
+```
+cmake -S . -B build
+cmake --build build --config=Release         for release
+cmake --build build --config=Debug           for debug
+```
+```
+You can check the build.bat as an example.
+```
