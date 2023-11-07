@@ -9,10 +9,10 @@ project(
 
 add_executable( timer src/main.cpp )
 
-add_compile_definitions( timer PRIVATE C_PLUS_PLUS )
-add_compile_definitions( timer PRIVATE _CRT_SECURE_NO_WARNINGS )
-add_compile_definitions( timer PRIVATE "$<$<CONFIG:Debug>:DEBUG>" )
-add_compile_definitions( timer PRIVATE "$<$<CONFIG:Release>:NDEBUG>" )
+target_compile_definitions( timer PRIVATE C_PLUS_PLUS )
+target_compile_definitions( timer PRIVATE _CRT_SECURE_NO_WARNINGS )
+target_compile_definitions( timer PRIVATE "$<$<CONFIG:Debug>:DEBUG>" )
+target_compile_definitions( timer PRIVATE "$<$<CONFIG:Release>:NDEBUG>" )
 
 target_compile_features( timer PRIVATE cxx_std_20 )
 
