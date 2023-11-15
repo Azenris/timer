@@ -17,8 +17,8 @@ Example.
 # How to build the build system using Cmake
 ```
 cmake -S . -B build
-cmake --build build --config=Release         for release
-cmake --build build --config=Debug           for debug
+cmake --build build --config=Release
+cmake --build build --config=Debug
 ```
 ```
 You can check the build.bat as an example.
