@@ -1,3 +1,8 @@
+# Status
+![Build Windows](https://github.com/Azenris/timer/actions/workflows/build-windows.yml/badge.svg)
+
+![Build Ubuntu](https://github.com/Azenris/timer/actions/workflows/build-ubuntu.yml/badge.svg)
+
 # Whats it for
 Just used on other projects to time the building on them.
 I use it for `personal` projects.
