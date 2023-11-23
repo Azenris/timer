@@ -1,6 +1,5 @@
 # Status
 ![Build Windows](https://github.com/Azenris/timer/actions/workflows/build-windows.yml/badge.svg)
-
 ![Build Ubuntu](https://github.com/Azenris/timer/actions/workflows/build-ubuntu.yml/badge.svg)
 
 # Whats it for
