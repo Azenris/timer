@@ -9,6 +9,8 @@ project(
 
 add_executable( timer src/main.cpp )
 
+option( BUILD_CRT_STATIC "CRT static link." ON )
+
 set_target_properties(
 	timer
 	PROPERTIES
@@ -26,8 +28,14 @@ target_compile_features( timer PRIVATE cxx_std_20 )
 if ( MSVC )
 	target_compile_definitions( timer PRIVATE _CRT_SECURE_NO_WARNINGS )
 	target_compile_options( timer PRIVATE -WX -W4 -wd4100 -wd4201 -wd4706 -Zc:preprocessor -Zc:strictStrings -GR- )
-	target_compile_options( timer PRIVATE $<$<CONFIG:Debug>:-Z7 -FC -MDd> )
-	target_compile_options( timer PRIVATE $<$<CONFIG:Release>:-MD -O2 -Ot -GF> )
+	target_compile_options( timer PRIVATE $<$<CONFIG:Debug>:-Z7 -FC> )
+	target_compile_options( timer PRIVATE $<$<CONFIG:Release>:-O2 -Ot -GF> )
+
+	if ( BUILD_CRT_STATIC )
+		target_compile_options( timer PRIVATE $<$<CONFIG:Release>:-MT>$<$<CONFIG:Debug>:-MTd> )
+	else()
+		target_compile_options( timer PRIVATE $<$<CONFIG:Release>:-MD>$<$<CONFIG:Debug>:-MDd> )
+	endif()
 endif()
 
 if ( CMAKE_COMPILER_IS_GNUCC )
